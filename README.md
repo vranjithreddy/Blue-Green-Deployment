@@ -1,7 +1,7 @@
 Blue-Green Deployment
 ===
 
-This repository contains the files for the docker image [hanzel/blue-green](https://hub.docker.com/r/hanzel/blue-green/), that will create blue-green deployment. It uses nginx using consul template. It requires [consul](https://hub.docker.com/r/gliderlabs/consul-server/) as the key value store and [registrator](https://hub.docker.com/r/gliderlabs/registrator/) service running in each host. It works with docker swarm and multi-host networking.
+This repository contains the files for the docker image [Image Name](https://hub.docker.com/r/hanzel/blue-green/), that will create blue-green deployment. It uses nginx using consul template. It requires [consul](https://hub.docker.com/r/gliderlabs/consul-server/) as the key value store and [registrator](https://hub.docker.com/r/gliderlabs/registrator/) service running in each host. It works with docker swarm and multi-host networking.
 
 Usage
 ---
@@ -23,7 +23,7 @@ version: '2'
 
 services:
   bg:
-    image: hanzel/blue-green
+    image: Image_Name
     container_name: bg
     ports:
       - "80:80"
@@ -40,7 +40,7 @@ services:
       - front-tier
 
   blue:
-    image: hanzel/nginx-html:1
+    image: Image_name/nginx-html:1
     ports:
       - "80"
     environment:
@@ -49,7 +49,7 @@ services:
       - front-tier
 
   green:
-    image: hanzel/nginx-html:2
+    image: Image_name/nginx-html:2
     ports:
       - "80"
     environment:
